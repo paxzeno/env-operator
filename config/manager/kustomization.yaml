@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- manager.yaml
+- ecr-pull-secret.yaml
+
+images:
+- name: controller
+  newName: 808719730202.dkr.ecr.ap-south-1.amazonaws.com/memcached-operator
+  newTag: latest
